@@ -3,6 +3,7 @@
 *.iml
 *.json
 
+.idea/*
 .idea/
 out/
 debug/
