@@ -30,6 +30,6 @@ thumbs.db
 *.log
 
 test/
-src/main/resources/
 target/generated-sources/
 target/
+pom.backup
