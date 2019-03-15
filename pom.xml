@@ -4,31 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>TelegaAWS13</name>
-    <description>
-        Berlin Telegram main.java.de.Bot.
-    </description>
-    <developers>
-        <developer>
-            <id>andron13</id>
-            <name>Andrej</name>
-            <email>andron13@gmail.com</email>
-            <timezone>ECT</timezone>
-        </developer>
-    </developers>
-
     <groupId>de.telran</groupId>
     <artifactId>TelegaBerlin13</artifactId>
     <packaging>jar</packaging>
     <version>0.1.0</version>
 
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Internal repo</name>
-            <url>file:///target</url>
-        </repository>
-    </distributionManagement>
+    <name>TelegaAWS13</name>
+    <description>
+        Telegram bot with spring boot starter
+    </description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+        <relativePath/>
+    </parent>
 
     <properties>
         <java.version>1.8</java.version>
@@ -36,66 +27,67 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <developers>
+        <developer>
+            <id>andron13</id>
+            <name>Andrej</name>
+            <email>andron13@gmail.com</email>
+            <url>https://t.me/andron13</url>
+            <organization>tel-ran</organization>
+            <organizationUrl>https://www.tel-ran.de/</organizationUrl>
+            <timezone>ECT</timezone>
+        </developer>
+    </developers>
 
     <build>
-        <!--<sourceDirectory>/src/main/java/de</sourceDirectory>-->
-
         <plugins>
             <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>de.Main</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.7</version>
-            </plugin>
-
         </plugins>
-
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.xabgesagtx</groupId>
+            <artifactId>telegram-spring-boot-starter</artifactId>
+            <version>0.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots</artifactId>
-            <version>4.1</version>
+            <version>4.1.2</version>
         </dependency>
-
-        <!--        <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter-api</artifactId>
-                    <version>5.1.0</version>
-                    <scope>test</scope>
-                </dependency>-->
 
         <dependency>
-            <!--
-            JSON SIMPLE PARSER
-            -->
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1</version>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambotsextensions</artifactId>
+            <version>4.1.2</version>
         </dependency>
+
     </dependencies>
 
 </project>
