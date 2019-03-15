@@ -1,5 +1,9 @@
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
+
+# plz read fucking readme.md
+/src/main/resources/application.yml
+
 *.iml
 *.json
 
@@ -16,14 +20,12 @@ debug/
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
-
 *.class
 *.jar
 *.war
 *.ear
 *.tmp
 *.exe
-
 
 thumbs.db
 .DS_Store
@@ -32,4 +34,6 @@ thumbs.db
 test/
 target/generated-sources/
 target/
-pom.backup
+/.classpath
+/.project
+.settings/
